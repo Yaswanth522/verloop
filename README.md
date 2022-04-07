@@ -1,6 +1,6 @@
 # verloop assignment
 
-# libraries used
+## libraries used
 rest_framework <br>
 django<br>
 requests<br>
@@ -8,7 +8,7 @@ json<br>
 
 link to google geolocation api documentation: https://developers.google.com/maps/documentation/geocoding/start
 
-# API request format:
+## API request format:
 ```
 {
   "address": "3582,13 G Main Road, 4th Cross Rd, Indiranagar, Bengaluru, Karnataka 560008",
@@ -17,9 +17,9 @@ link to google geolocation api documentation: https://developers.google.com/maps
 ```
 
 
-# Sample API response
+## Sample API response
 
-## json
+### json
 ```
 {
   "coordinates": {
@@ -30,7 +30,7 @@ link to google geolocation api documentation: https://developers.google.com/maps
 }
 ```
 
-## xml
+### xml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <root>

@@ -8,7 +8,7 @@ import requests
 import json
 
 # Global variabless
-AUTHORIZATION_KEY = "YOUR_API_KEY"
+AUTHORIZATION_KEY = "AIzaSyCOD3KvY2DDzEfel-NZ_LKIWXr86EF_EUw"
 
 
 # function to get coordinates based on address given to api
@@ -37,8 +37,8 @@ def googleApi(address, format):
     if(format == "json"):
         responseDict = {
             "coordinates": {
-                "lat": lat,
-                "lng": lng
+                "lat": float(str(lat)[:8]),
+                "lng": float(str(lng)[:8])
             },
             "address": address
         }
@@ -46,8 +46,8 @@ def googleApi(address, format):
         responseDict = {
             "address": address,
             "coordinates": {
-                "lat": lat,
-                "lng": lng
+                "lat": float(str(lat)[:8]),
+                "lng": float(str(lng)[:8])
             }
         }
     return responseDict

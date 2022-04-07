@@ -9,11 +9,14 @@ json<br>
 link to google geolocation api documentation: https://developers.google.com/maps/documentation/geocoding/start
 
 # API request format:
-```{
+```
+{
   "address": "3582,13 G Main Road, 4th Cross Rd, Indiranagar, Bengaluru, Karnataka 560008",
   "output_format": "json"
-}```
-xyz
+}
+```
+
+
 # Sample API response
 
 ## json

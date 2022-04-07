@@ -8,7 +8,7 @@ import requests
 import json
 
 # Global variabless
-AUTHORIZATION_KEY = "AIzaSyCOD3KvY2DDzEfel-NZ_LKIWXr86EF_EUw"
+AUTHORIZATION_KEY = "YOUR_API_KEY"
 
 
 # function to get coordinates based on address given to api
@@ -30,15 +30,15 @@ def googleApi(address, format):
     # sending post request with address and authorization key
     response = requests.post("https://maps.googleapis.com/maps/api/geocode/json?address=" + formatter(address) + "&key=" + AUTHORIZATION_KEY)
     data = json.loads(response.content)  # converting web response into json to parse it
-    lat = data["results"][0]["geometry"]["location"]["lat"]  # parsing latitude
-    lng = data["results"][0]["geometry"]["location"]["lng"]  # parsing longitude
+    lat = float(str(data["results"][0]["geometry"]["location"]["lat"])[:8])  # parsing latitude and rounding off to 8 char's
+    lng = float(str(data["results"][0]["geometry"]["location"]["lng"])[:8])  # parsing longitude and rounding off to 8 char's
 
     # creating dictionaries to convert into json or xml as per output format
     if(format == "json"):
         responseDict = {
             "coordinates": {
-                "lat": float(str(lat)[:8]),
-                "lng": float(str(lng)[:8])
+                "lat": lat,
+                "lng": lng
             },
             "address": address
         }
@@ -46,8 +46,8 @@ def googleApi(address, format):
         responseDict = {
             "address": address,
             "coordinates": {
-                "lat": float(str(lat)[:8]),
-                "lng": float(str(lng)[:8])
+                "lat": lat,
+                "lng": lng
             }
         }
     return responseDict

@@ -6,7 +6,7 @@ django<br>
 requests<br>
 json<br>
 
-link to google geolocation api documentation: https://developers.google.com/maps/documentation/geocoding/start
+google geolocation api documentation: <a href = "https://developers.google.com/maps/documentation/geocoding/start">link</a>
 
 ## API request format:
 ```
